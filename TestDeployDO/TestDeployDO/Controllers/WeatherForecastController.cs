@@ -21,6 +21,9 @@ public class WeatherForecastController : ControllerBase
     [HttpGet(Name = "GetWeatherForecast")]
     public IEnumerable<WeatherForecast> Get()
     {
+        _logger.LogInformation("Starting request..");
+        _logger.LogError("Starting request..");
+        _logger.LogCritical("Starting request..");
         return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
